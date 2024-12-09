@@ -1,0 +1,10 @@
+{
+  "name": "remix-starterkit",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {},
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
