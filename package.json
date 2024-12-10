@@ -11,7 +11,8 @@
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "lint:fix": "eslint --fix --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
-    "typecheck": "bash -c \"tsc $* -p tsconfig.json --noEmit\""
+    "typecheck": "bash -c tsc --noEmit",
+    "prepare": "husky"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -38,12 +39,22 @@
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.8",
     "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.7",
-    "typescript": "^5.5.4",
+    "typescript": "^5.7.2",
     "vite": "^5.4.5",
     "vite-tsconfig-paths": "^4.3.2"
+  },
+  "lint-staged": {
+    "*": "npm run format",
+    "*.{js,ts,jsx,tsx}": [
+      "npm run lint",
+      "npm run typecheck"
+    ],
+    "*.{html,css,js,ts,md,jsx,tsx,mdx}": "npm run build ."
   }
 }
