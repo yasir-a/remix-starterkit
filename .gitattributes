@@ -1,0 +1,15 @@
+# Automatically normalize line endings
+* text=auto
+
+# Force LF for specific files
+*.sh text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+
+# Force CRLF for specific files
+*.bat text eol=crlf
+
+# Binary files (no line ending normalization)
+*.png binary
+*.jpg binary
+*.exe binary
