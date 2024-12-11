@@ -8,7 +8,7 @@ export default function Home() {
           <span className="relative overflow-hidden rounded-full p-[1px]">
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#171717_0%,#737373_50%,#171717_100%)]" />
             <div className="select-none rounded-full bg-black px-3 py-1 text-xs font-medium leading-5 text-slate-200 backdrop-blur-xl">
-              It&apos;s done
+              It&apos;s done. The Remix Starter kit is ready now
             </div>
           </span>
         </div>
