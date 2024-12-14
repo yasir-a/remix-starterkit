@@ -53,11 +53,3 @@ jobs:
 
       - name: Build with Vite
         run: npm run build
-
-      - name: Cache build artifacts
-        uses: actions/cache@v3
-        with:
-          path: ./build/client
-          key: ${{ runner.os }}-build-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-build-
