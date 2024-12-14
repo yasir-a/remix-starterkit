@@ -28,7 +28,6 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node_version: ["20.x"]
-    # A job contains a sequence of tasks called steps
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -51,3 +50,12 @@ jobs:
 
       - name: Type check with TypeScript
         run: npm run typecheck
+
+      - name: Build with Vite
+        run: npm run build
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v3
+        with:
+          name: production-files
+          path: ./build/client
