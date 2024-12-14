@@ -54,8 +54,10 @@ jobs:
       - name: Build with Vite
         run: npm run build
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
+      - name: Cache build artifacts
+        uses: actions/cache@v3
         with:
-          name: production-files
           path: ./build/client
+          key: ${{ runner.os }}-build-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-build-
